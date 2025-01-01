@@ -1,0 +1,69 @@
+{
+    // The name of the extension
+    "name": "grok",
+    // The display name of the extension in the marketplace
+    "displayName": "Grok",
+    // A brief description of the extension
+    "description": "A VS Code extension to interact with Grok API as a coding assistant.",
+    // The version of the extension
+    "version": "0.0.1",
+    // The publisher's name
+    "publisher": "your-publisher-name",
+    "engines": {
+        // Specifies the compatible VS Code version
+        "vscode": "^1.50.0",
+        // Specifies the compatible Cursor version
+        "cursor": "^1.0.0" // Assuming Cursor has this version or later
+    },
+    "categories": [
+        // The category under which the extension will be listed
+        "Other"
+    ],
+    "activationEvents": [
+        // Events that activate the extension
+        "onCommand:grok.setApiKey",
+        "onCommand:grok.ask",
+        "onCommand:grok.pasteAndAsk"
+    ],
+    // The entry point of the extension
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                // Command to set the Grok API key
+                "command": "grok.setApiKey",
+                "title": "Set Grok API Key"
+            },
+            {
+                // Command to ask Grok with selected text
+                "command": "grok.ask",
+                "title": "Ask Grok"
+            },
+            {
+                // Command to paste and ask Grok
+                "command": "grok.pasteAndAsk",
+                "title": "Paste and Ask Grok"
+            }
+        ]
+    },
+    "scripts": {
+        // Script to compile the extension before publishing
+        "vscode:prepublish": "npm run compile",
+        // Script to compile TypeScript files
+        "compile": "tsc -p ./",
+        // Script to watch for changes and recompile
+        "watch": "tsc -watch -p ./",
+        // Script to install VS Code dependencies
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        // Development dependency for TypeScript
+        "typescript": "^4.0.0",
+        // Development dependency for VS Code extension API
+        "vscode": "^1.1.37"
+    },
+    "dependencies": {
+        // Dependency for making HTTP requests
+        "axios": "^0.21.1"
+    }
+}

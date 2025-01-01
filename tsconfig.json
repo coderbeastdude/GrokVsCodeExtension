@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        // Specifies the module code generation method
+        "module": "commonjs",
+        // Specifies the target ECMAScript version
+        "target": "es6",
+        // Redirects output structure to the directory
+        "outDir": "out",
+        // Specifies the root directory of input files
+        "rootDir": "src",
+        // Generates corresponding '.map' files
+        "sourceMap": true,
+        // Enables all strict type-checking options
+        "strict": true,
+        // Enables interoperability between CommonJS and ES Modules
+        "esModuleInterop": true,
+        // Determines how modules are resolved
+        "moduleResolution": "node"
+    },
+    "exclude": [
+        // Excludes 'node_modules' directory from compilation
+        "node_modules",
+        // Excludes '.vscode-test' directory from compilation
+        ".vscode-test"
+    ]
+}
